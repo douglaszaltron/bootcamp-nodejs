@@ -11,8 +11,14 @@ nunjucks.configure('views', {
 
 app.set('view engine', 'njk')
 
+const users = ['Mercúrio', 'Vênus', 'Terra', 'Marte', 'Júpiter', 'Saturno', 'Urano', 'Netuno']
+
 app.get('/', (req, res) => {
-    return res.render('list', { name: 'Douglas' })
+    return res.render('list', { users: users })
+})
+
+app.get('/new', (req, res) => {
+    return res.render('new')
 })
 
 app.listen(3000)
