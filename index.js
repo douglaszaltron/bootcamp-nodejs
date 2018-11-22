@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/nome/:name', (req, res) => {
-    return res.send(`Bem-vindo, ${req.params.name}`)
+    return res.send(`Welcome, ${req.params.name}`)
 })
 
 app.get('/nome/json/:name', (req, res) => {
