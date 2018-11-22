@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('users', {
+    return queryInterface.createTable('Users', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -31,7 +31,7 @@ module.exports = {
         defaultValue: false,
         type: Sequelize.BOOLEAN
       },
-      createad_at: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
@@ -43,6 +43,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('users')
+    return queryInterface.dropTable('Users')
   }
 }
