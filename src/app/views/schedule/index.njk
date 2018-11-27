@@ -1,0 +1,48 @@
+{% extends "_layouts/default.njk" %}
+
+{% block body %}
+  <div class="content">
+    <strong>Meus agendamentos</strong>
+
+    <div>
+      <a href="/app/schedule" class="btn btn-primary">Hoje</a>
+      <form action="/app/appointments/new/{{ provider.id}}" method="POST">
+        <input type="text" class="flatpickr" placeholder="Escolha uma data">
+      </form>
+    </div>
+
+    {% if appointments.length %}
+      <ul class="schedules">
+        {% for appointment in appointments %}
+          <li class="schedule {% if appointment.date | isAfter === false %}disabled{% endif %}">
+            <strong>{{ appointment.date | date("HH:mm") }}</strong>
+            <div>
+              <img src="/files/{{appointment.user.avatar}}" alt="Avatar">
+              <strong>{{ appointment.user.name  }}</strong>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <span align="center">Nenhum agendamento marcado!</span>
+    {% endif %}
+
+    <a href="/app/dashboard" class="btn btn-secondary">Voltar ao início</a>
+
+  </div>
+
+  <script type="text/javascript">
+    flatpickr('.flatpickr', {
+      minDate: new Date(),
+      defaultDate: new Date('{{defaultDate}}'),
+      dateFormat: 'd/m/Y',
+      locale: 'pt',
+      onChange: function (date) {
+        window
+          .location
+          .assign(`/app/schedule?date=${date[0].getTime()}`);
+      }
+    })
+  </script>
+
+{% endblock %}

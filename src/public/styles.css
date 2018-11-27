@@ -295,3 +295,88 @@ ul.providers {
   background-color: #7159c1 !important;
   border-color: #634dac !important;
 }
+
+.btn-add-plus {
+  width: 28px;
+  height: 28px;
+  padding: 6px 10px;
+}
+
+.btn {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  border: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #fff;
+  background: #7159c1;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #634dac;
+}
+
+.btn-secondary {
+  color: #fff;
+  background: #de6d6d;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: #c15858;
+}
+
+.schedules {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule {
+  padding: 10px 20px;
+  border-width: 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.schedule div {
+  display: flex;
+  align-items: center;
+}
+
+.schedule img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.schedule strong {
+  margin-left: 15px;
+  color: #444;
+}
+
+.schedule.disabled {
+  opacity: 0.3;
+}
+
+.schedule:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.schedule:last-child {
+  margin-bottom: 20px;
+}
