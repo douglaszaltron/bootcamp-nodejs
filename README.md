@@ -1,9 +1,7 @@
-# Desafio 2
+# Desafio 3
 
-Nesse segundo desafio você deve melhorar a aplicação que criamos até agora, o GoBarber.
+Nesse terceiro desafio você irá melhorar a aplicação desenvolvida durante o terceiro módulo com as seguintes funcionalidades:
 
-Até agora criamos a parte do usuário poder agendar um serviço com o prestador, e também vetamos que serviços sejam marcados no mesmo horário, ou em horários que já passaram.
-
-A partir de agora você deve implementar o seguinte:
-
-Crie uma seção para o prestador de serviços acompanhar os agendamentos do dia programados com ele. Essa seção deve incluir as informações do usuário que agendou e também o horário do agendamento.
+- Armazene as intenções de compra (Purchase) no MongoDB criando um Model e salvando os dados da purchase no método `store` do PurchaseController;
+- Crie uma nova rota para o vendedor aceitar uma intenção de compra declarando o item como vendido e a partir desse momento o anúncio não deve ser mais exibido nas listagens e não deve ser mais possível realizar uma intenção de compra para esse anúncio;
+- O Ad deve possui um campo adicional chamado `purchasedBy` que armazena o ID da Purchase que o vendedor aceitou, caso esse campo esteja presente, quer dizer que o anúncio foi vendido;
